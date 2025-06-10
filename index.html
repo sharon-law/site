@@ -129,6 +129,12 @@
             .menu-toggle.active span:nth-child(3) {
                 transform: rotate(45deg) translate(-5px, -6px);
             }
+
+            .profile-image {
+
+            max-height: 350px;
+
+        }
         }
 
         /* Hero Section */
@@ -211,24 +217,17 @@
         }
 
         /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .about-image {
-            height: 300px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
         .about-text {
+            max-width: 800px;
+            margin: 0 auto;
             line-height: 1.8;
+            text-align: right;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #4a5f7a;
         }
 
         .about-text p {
@@ -382,18 +381,43 @@
             padding: 20px;
         }
 
+        /* Profile Image Section */
+        .profile-image-section {
+            background-color: #f8fafb;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .profile-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 450px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: 0 10px 30px rgba(90, 124, 142, 0.2);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
 
             .hero h2 {
                 font-size: 1.3rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
+            .about-text {
+                text-align: right;
+                padding: 0 10px;
             }
 
             .contact-info {
@@ -413,6 +437,12 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .profile-image {
+
+            max-height: 280px;
+
+        }
         }
     </style>
 </head>
@@ -447,19 +477,21 @@
         <a href="tel:0555640161" class="cta-button secondary">חייגו עכשיו</a>
     </section>
 
+    <!-- Profile Image Section -->
+    <section class="profile-image-section">
+        <div class="profile-container">
+            <img src="sharon-law.jpeg" alt="עו״ד שרון ברוורמן עטיה" class="profile-image">
+        </div>
+    </section>
+
     <!-- About Section -->
     <section id="about">
         <h2 class="section-title">אודות המשרד</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="sharon-law.jpeg" alt="עו״ד שרון ברוורמן עטיה" style="max-width: 100%; max-height: 100%; border-radius: 10px;">
-            </div>
-            <div class="about-text">
-                <p><strong>עו״ד שרון ברוורמן עטיה</strong> - בעלת תואר ראשון במשפטים (LL.B) משנת 2016, חברה בלשכת עורכי הדין בישראל.</p>
-                <p>בעלת תעודת מגשרת מוסמכת מטעם המוסד הארצי לגישור ע״ש דוד רוטלוי ובעלת הסמכה לערוך ייפוי כוח מתמשך.</p>
-                <p>את דרכי החלתי במשפט העבודה בהתמחות בבית הדין האזורי לעבודה תחת חסותו של כב׳ השופט סגן הנשיאה דאז, אילן סופר, שם הכרתי את אחורי הקלעים של משפט העבודה, למדתי והתמקצעתי באופן ניהול התיקים ואופן קבלת ההחלטות בפן השיפוטי.</p>
-                <p>המשרד מחויב להעניק ליווי משפטי אישי, איכותי ומקצועי הנותן מענה לשינויים התכופים בתחום משפט העבודה בארץ ובעולם.</p>
-            </div>
+        <div class="about-text">
+            <p><strong>עו״ד שרון ברוורמן עטיה</strong> - בעלת תואר ראשון במשפטים (LL.B) משנת 2016, חברה בלשכת עורכי הדין בישראל.</p>
+            <p>בעלת תעודת מגשרת מוסמכת מטעם המוסד הארצי לגישור ע״ש דוד רוטלוי ובעלת הסמכה לערוך ייפוי כוח מתמשך.</p>
+            <p>את דרכי החלתי במשפט העבודה בהתמחות בבית הדין האזורי לעבודה תחת חסותו של כב׳ השופט סגן הנשיאה דאז, אילן סופר, שם הכרתי את אחורי הקלעים של משפט העבודה, למדתי והתמקצעתי באופן ניהול התיקים ואופן קבלת ההחלטות בפן השיפוטי.</p>
+            <p>המשרד מחויב להעניק ליווי משפטי אישי, איכותי ומקצועי הנותן מענה לשינויים התכופים בתחום משפט העבודה בארץ ובעולם.</p>
         </div>
     </section>
 
