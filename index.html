@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עו"ד שרון ברוורמן עטיה - משרד עורכי דין</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #d4af37;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #d4af37;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 100%);
+            color: white;
+            padding: 150px 20px 80px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #d4af37;
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: normal;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #d4af37;
+            color: #1a1a1a;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.3s;
+            margin: 10px;
+        }
+
+        .cta-button:hover {
+            background-color: #b8941f;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a1a1a;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: #d4af37;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-image {
+            background-color: #e9ecef;
+            height: 300px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #6c757d;
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #d4af37;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .service-card p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        /* Experience Section */
+        .experience-list {
+            list-style: none;
+            position: relative;
+            padding-right: 30px;
+        }
+
+        .experience-list::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: #d4af37;
+        }
+
+        .experience-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-right: 40px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 5px;
+            width: 14px;
+            height: 14px;
+            background-color: #d4af37;
+            border-radius: 50%;
+        }
+
+        .experience-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .experience-item p {
+            color: #6c757d;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: #d4af37;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-item a:hover {
+            color: #b8941f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0f0f0f;
+            color: #6c757d;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .cta-button {
+                font-size: 1rem;
+                padding: 12px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">עו״ד שרון ברוורמן עטיה</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">בית</a></li>
+                    <li><a href="#about">אודות</a></li>
+                    <li><a href="#services">תחומי התמחות</a></li>
+                    <li><a href="#experience">ניסיון</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>עו״ד ומגשרת שרון ברוורמן עטיה</h1>
+        <h2>מומחית לדיני עבודה | ליטיגציה | ביטחון סוציאלי</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 2rem;">ליווי משפטי אישי, איכותי ומקצועי</p>
+        <a href="#contact" class="cta-button">לייעוץ ראשוני</a>
+        <a href="tel:0555640161" class="cta-button">חייגו עכשיו</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">אודות המשרד</h2>
+        <div class="about-content">
+            <div class="about-image">
+                תמונת פרופיל
+            </div>
+            <div class="about-text">
+                <p><strong>עו״ד שרון ברוורמן עטיה</strong> - בעלת תואר ראשון במשפטים (LL.B) משנת 2016, חברה בלשכת עורכי הדין בישראל.</p>
+                <p>בעלת תעודת מגשרת מוסמכת מטעם המוסד הארצי לגישור ע״ש דוד רוטלוי ובעלת הסמכה לערוך ייפוי כוח מתמשך.</p>
+                <p>את דרכי החלתי במשפט העבודה בהתמחות בבית הדין האזורי לעבודה תחת חסותו של כב׳ השופט סגן הנשיאה דאז, אילן סופר, שם הכרתי את אחורי הקלעים של משפט העבודה, למדתי והתמקצעתי באופן ניהול התיקים ואופן קבלת ההחלטות בפן השיפוטי.</p>
+                <p>המשרד מחויב להעניק ליווי משפטי אישי, איכותי ומקצועי הנותן מענה לשינויים התכופים בתחום משפט העבודה בארץ ובעולם.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2 class="section-title">תחומי התמחות</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">⚖️</div>
+                <h3>דיני עבודה</h3>
+                <p>ייצוג עובדים ומעסיקים, פיצויי פיטורין, הגנה על זכויות עובדים, התעמרות בעבודה, הסכמי עבודה וליטיגציה</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👥</div>
+                <h3>גישור</h3>
+                <p>פתרון סכסוכים בדרכי שלום, גישור בין עובדים למעסיקים, חיסכון בזמן ובעלויות משפטיות</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏥</div>
+                <h3>ביטחון סוציאלי</h3>
+                <p>תאונות עבודה, נכות מעבודה, מימוש זכויות מול המוסד לביטוח לאומי, ייצוג בוועדות רפואיות</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">👩‍💼</div>
+                <h3>זכויות נשים בעבודה</h3>
+                <p>הגנה על עובדות בהריון, טיפולי פוריות, חופשת לידה, התמחות ייחודית בהגנה על זכויות נשים בעולם העבודה</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📋</div>
+                <h3>צוואות וירושה</h3>
+                <p>עריכת צוואות, ייפוי כוח מתמשך, ייעוץ וליווי בענייני ירושה</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏢</div>
+                <h3>ייעוץ לחברות</h3>
+                <p>ייעוץ שוטף לתאגידים ומוסדות ציבוריים, ליווי בעת משבר ביחסי עבודה, הסדרת נהלי עבודה</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">ניסיון מקצועי</h2>
+        <ul class="experience-list">
+            <li class="experience-item">
+                <h3>התמחות בבית הדין לעבודה</h3>
+                <p>התמחות תחת כב׳ השופט סגן הנשיאה אילן סופר, היכרות עמוקה עם הפן השיפוטי של משפט העבודה</p>
+            </li>
+            <li class="experience-item">
+                <h3>משרד חכמון-אלמקייס ושות׳</h3>
+                <p>ריכוז תחום דיני העבודה במשרד מוביל במחוז הדרום, ייצוג עובדים, ועדי עובדים ומעסיקים</p>
+            </li>
+            <li class="experience-item">
+                <h3>משרד עצמאי</h3>
+                <p>ייצוג חברות מובילות מכל מגזרי המשק, מוסדות השכלה גבוהה, חברות ממשלתיות, עמותות ורשויות מקומיות</p>
+            </li>
+            <li class="experience-item">
+                <h3>מרצה ומומחית</h3>
+                <p>מרצה בהשתלמויות ובימי עיון בלשכת עורכי הדין, בכנסים של ארגוני מעסיקים ובהשתלמויות למנהלי משאבי אנוש</p>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">צור קשר</h2>
+        <div class="contact-info">
+            <div class="contact-item">
+                📱 <a href="tel:0555640161">055-5640161</a>
+            </div>
+            <div class="contact-item">
+                📧 <a href="mailto:sharon@braver-law.co.il">sharon@braver-law.co.il</a>
+            </div>
+            <div class="contact-item">
+                📍 באר שבע | מצדה 6 | מרכז הנגב
+            </div>
+        </div>
+        <a href="tel:0555640161" class="cta-button">תאמו פגישת ייעוץ</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 עו״ד שרון ברוורמן עטיה. כל הזכויות שמורות.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(26, 26, 26, 0.95)';
+            } else {
+                header.style.backgroundColor = '#1a1a1a';
+            }
+        });
+    </script>
+</body>
+</html>
