@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>עו"ד שרון ברוורמן עטיה - משרד עורכי דין</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,7 +15,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Roboto', sans-serif;
             line-height: 1.6;
             color: #2c3e50;
             background-color: #f8fafb;
@@ -158,6 +161,7 @@
             font-size: 3rem;
             margin-bottom: 1rem;
             color: #34495e;
+            font-family: 'Playfair Display', serif;
         }
 
         .hero h2 {
@@ -165,6 +169,7 @@
             margin-bottom: 2rem;
             font-weight: normal;
             color: #5a7c8e;
+            font-family: 'Cormorant Garamond', serif;
         }
 
         .cta-button {
@@ -211,6 +216,7 @@
             color: #34495e;
             position: relative;
             padding-bottom: 15px;
+            font-family: 'Playfair Display', serif;
         }
 
         .section-title::after {
@@ -422,15 +428,13 @@
         
         .profile-text-overlay {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(52, 73, 94, 0.8); /* Dark blue with transparency */
-            padding: 30px;
-            border-radius: 5px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(28, 40, 51, 0.85); /* Dark blue with transparency */
+            padding: min(5%, 30px) min(5%, 30px);
             text-align: center;
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -438,19 +442,23 @@
         }
         
         .profile-text-overlay h3 {
-            margin: 0 0 15px 0;
+            margin: 0 0 10px 0;
             color: #ffffff;
-            font-size: 2rem;
+            font-family: 'Playfair Display', serif;
+            font-size: min(5vw, 2.2rem);
             font-weight: 700;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
         }
         
         .profile-text-overlay p {
             margin: 0;
             color: #ecf0f1;
-            font-size: 1.3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: min(3.5vw, 1.5rem);
             font-weight: 500;
             letter-spacing: 1px;
+            font-style: italic;
         }
 
         /* Responsive */
@@ -491,17 +499,15 @@
             }
             
             .profile-text-overlay {
-                padding: 15px;
-                width: 90%;
+                padding: 12px;
             }
             
             .profile-text-overlay h3 {
-                font-size: 1.4rem;
-                margin-bottom: 10px;
+                margin-bottom: 5px;
             }
             
             .profile-text-overlay p {
-                font-size: 1rem;
+                /* Font size is already responsive with vw units */
             }
         }
     </style>
