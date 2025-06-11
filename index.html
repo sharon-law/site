@@ -403,6 +403,13 @@
             padding: 0;
         }
 
+        .profile-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .profile-image {
             width: 100%;
             height: auto;
@@ -411,6 +418,31 @@
             object-fit: cover;
             object-position: center;
             box-shadow: 0 10px 30px rgba(90, 124, 142, 0.2);
+        }
+        
+        .profile-text-overlay {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 15px 20px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+        }
+        
+        .profile-text-overlay h3 {
+            margin: 0 0 5px 0;
+            color: #34495e;
+            font-size: 1.4rem;
+        }
+        
+        .profile-text-overlay p {
+            margin: 0;
+            color: #5a7c8e;
+            font-size: 1.1rem;
+            font-weight: 500;
         }
 
         /* Responsive */
@@ -447,10 +479,23 @@
             }
 
             .profile-image {
-
-            max-height: 280px;
-
-        }
+                max-height: 280px;
+            }
+            
+            .profile-text-overlay {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px 15px;
+                max-width: 200px;
+            }
+            
+            .profile-text-overlay h3 {
+                font-size: 1.2rem;
+            }
+            
+            .profile-text-overlay p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -488,7 +533,14 @@
     <!-- Profile Image Section -->
     <section class="profile-image-section">
         <div class="profile-container">
-            <img src="sharon-law.jpeg" alt="עו״ד שרון ברוורמן עטיה" class="profile-image">
+            <div class="profile-image-container">
+                <img src="sharon-law.jpeg" alt="עו״ד שרון ברוורמן עטיה" class="profile-image">
+                <div class="profile-text-overlay">
+                    <h3>שרון ברוורמן עטיה</h3>
+                    <p>עורכת דין ומגשרת</p>
+                    <p>מומחית לדיני עבודה</p>
+                </div>
+            </div>
         </div>
     </section>
 
