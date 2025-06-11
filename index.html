@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -51,7 +52,7 @@
             height: 60px;
             width: 60px;
             border-radius: 50%;
-            border: 2px solid #5a7c8e;
+            border: 2px solid black;
             object-fit: cover;
             object-position: center;
         }
@@ -200,6 +201,32 @@
         .cta-button.secondary:hover {
             background-color: #5a7c8e;
             color: white;
+        }
+        
+        .whatsapp-button {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            margin: 10px;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-button i {
+            margin-left: 10px;
+            font-size: 1.4rem;
+            vertical-align: middle;
         }
 
         /* Sections */
@@ -353,6 +380,34 @@
             color: white;
             text-align: center;
         }
+        
+        /* Fixed WhatsApp button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #1da851;
+        }
+        
+        .whatsapp-float i {
+            font-size: 2rem;
+        }
 
         .contact .section-title {
             color: white;
@@ -470,6 +525,15 @@
             .hero h2 {
                 font-size: 1.3rem;
             }
+            
+            .whatsapp-button, .cta-button {
+                display: block;
+                width: 80%;
+                margin: 10px auto;
+                padding: 12px 20px;
+                font-size: 1rem;
+                text-align: center;
+            }
 
             .about-text {
                 text-align: right;
@@ -554,6 +618,7 @@
         <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #5a7c8e;">ליווי משפטי אישי, מקצועי ובלתי מתפשר, מבוסס ניסיון, שליחות והבנה מעמיקה של עולם העבודה והזכויות בישראל</p>
         <a href="#contact" class="cta-button">לייעוץ ראשוני</a>
         <a href="tel:0507917679" class="cta-button secondary">חייגו עכשיו</a>
+        <a href="https://wa.me/9720507917679?text=שלום,%20מעוניין/ת%20בייעוץ%20משפטי" class="whatsapp-button"><i class="fab fa-whatsapp"></i> צרו קשר בוואטסאפ</a>
     </section>
 
     <!-- Profile Image Section -->
@@ -656,12 +721,18 @@
             </div>
         </div>
         <a href="tel:0507917679" class="cta-button">תאמו פגישת ייעוץ</a>
+        <a href="https://wa.me/9720507917679?text=שלום,%20מעוניין/ת%20בייעוץ%20משפטי" class="whatsapp-button"><i class="fab fa-whatsapp"></i> שלחו הודעה בוואטסאפ</a>
     </section>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 עו״ד שרון ברוורמן עטיה. כל הזכויות שמורות.</p>
     </footer>
+    
+    <!-- Fixed WhatsApp Button -->
+    <a href="https://wa.me/9720507917679?text=שלום,%20מעוניין/ת%20בייעוץ%20משפטי" class="whatsapp-float" aria-label="שלח הודעת וואטסאפ">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <script>
         // Toggle mobile menu
