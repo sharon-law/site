@@ -422,27 +422,35 @@
         
         .profile-text-overlay {
             position: absolute;
-            bottom: 30px;
-            right: 30px;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(52, 73, 94, 0.8); /* Dark blue with transparency */
+            padding: 30px;
             border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
             text-align: center;
-            max-width: 300px;
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         
         .profile-text-overlay h3 {
-            margin: 0 0 5px 0;
-            color: #34495e;
-            font-size: 1.4rem;
+            margin: 0 0 15px 0;
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
         .profile-text-overlay p {
             margin: 0;
-            color: #5a7c8e;
-            font-size: 1.1rem;
+            color: #ecf0f1;
+            font-size: 1.3rem;
             font-weight: 500;
+            letter-spacing: 1px;
         }
 
         /* Responsive */
@@ -483,18 +491,17 @@
             }
             
             .profile-text-overlay {
-                bottom: 15px;
-                right: 15px;
-                padding: 10px 15px;
-                max-width: 200px;
+                padding: 15px;
+                width: 90%;
             }
             
             .profile-text-overlay h3 {
-                font-size: 1.2rem;
+                font-size: 1.4rem;
+                margin-bottom: 10px;
             }
             
             .profile-text-overlay p {
-                font-size: 0.9rem;
+                font-size: 1rem;
             }
         }
     </style>
@@ -536,9 +543,8 @@
             <div class="profile-image-container">
                 <img src="sharon-law.jpeg" alt="עו״ד שרון ברוורמן עטיה" class="profile-image">
                 <div class="profile-text-overlay">
-                    <h3>שרון ברוורמן עטיה</h3>
-                    <p>עורכת דין ומגשרת</p>
-                    <p>מומחית לדיני עבודה</p>
+                    <h3>שרון ברוורמן עטיה ושות' | משרד עורכי דין</h3>
+                    <p>SHARON BRAVERMAN ATTIA & CO | LAW OFFICE</p>
                 </div>
             </div>
         </div>
