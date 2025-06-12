@@ -1,9 +1,13 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>עו"ד שרון ברוורמן עטיה - משרד עורכי דין</title>
+    <meta name="description" content="משרד עו״ד שרון ברוורמן עטיה - מומחית לדיני עבודה, ליטיגציה, ביטוח לאומי וייצוג בבתי דין לעבודה">
+    <link rel="canonical" href="https://braver-law.co.il/">
+    <meta name="author" content="עו״ד שרון ברוורמן עטיה">
+    <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -20,6 +24,27 @@
             line-height: 1.6;
             color: #2c3e50;
             background-color: #f8fafb;
+        }
+        
+        /* Accessibility styles */
+        .skip-to-content {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #5a7c8e;
+            color: white;
+            padding: 8px;
+            z-index: 1001;
+            transition: top 0.3s;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+        }
+        
+        *:focus {
+            outline: 2px solid #5a7c8e;
+            outline-offset: 2px;
         }
 
         /* Header Styles */
@@ -453,6 +478,19 @@
             text-align: center;
             padding: 20px;
         }
+        
+        .footer-link {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        
+        .footer-link:hover, .footer-link:focus {
+            color: #5a7c8e;
+            text-decoration: underline;
+        }
 
         /* Profile Image Section */
         .profile-image-section {
@@ -604,8 +642,8 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <div class="logo"><img src="logo.png" alt="לוגו משרד עו״ד שרון ברוורמן עטיה"></div>
-            <button class="menu-toggle" onclick="toggleMenu()">
+            <div class="logo"><a href="#home"><img src="logo.png" alt="לוגו משרד עו״ד שרון ברוורמן עטיה"></a></div>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="תפריט ניווט" aria-expanded="false" aria-controls="navbar">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -615,15 +653,18 @@
                     <li><a href="#home" onclick="closeMenu()">בית</a></li>
                     <li><a href="#about" onclick="closeMenu()">אודות</a></li>
                     <li><a href="#services" onclick="closeMenu()">תחומי התמחות</a></li>
-                    <li><a href="#experience" onclick="closeMenu()">ניסיון</a></li>
                     <li><a href="#contact" onclick="closeMenu()">צור קשר</a></li>
+                    <li><a href="accessibility.html" onclick="closeMenu()">נגישות</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Skip to content link for screen readers -->
+    <a href="#home" class="skip-to-content" tabindex="0">דלג לתוכן העמוד</a>
+    
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" role="main" tabindex="-1">
         <h1>עו״ד ומגשרת שרון ברוורמן עטיה</h1>
         <h2>דיני עבודה | ליטיגציה | ביטוח לאומי</h2>
     </section>
@@ -632,7 +673,7 @@
     <section class="profile-image-section">
         <div class="profile-container">
             <div class="profile-image-container">
-                <img src="sharon-law.jpeg" alt="עו״ד שרון ברוורמן עטיה" class="profile-image">
+                <img src="sharon-law.jpeg" alt="תמונת עו״ד שרון ברוורמן עטיה בחזית משרדה" class="profile-image">
                 <div class="profile-text-overlay">
                     <h3>שרון ברוורמן עטיה ושות' | משרד עורכי דין</h3>
                     <p>SHARON BRAVERMAN ATTIA & CO | LAW OFFICE</p>
@@ -718,11 +759,12 @@
     <!-- Footer -->
     <footer>
         <p>&copy; 2025 עו״ד שרון ברוורמן עטיה. כל הזכויות שמורות.</p>
+        <p><a href="accessibility.html" class="footer-link">הצהרת נגישות</a></p>
     </footer>
     
     <!-- Fixed WhatsApp Button -->
-    <a href="https://wa.me/9720507917679?text=שלום,%20מעוניין/ת%20בייעוץ%20משפטי" class="whatsapp-float" aria-label="שלח הודעת וואטסאפ">
-        <i class="fab fa-whatsapp"></i>
+    <a href="https://wa.me/9720507917679?text=שלום,%20מעוניין/ת%20בייעוץ%20משפטי" class="whatsapp-float" aria-label="שלח הודעת וואטסאפ" role="button" tabindex="0">
+        <i class="fab fa-whatsapp" aria-hidden="true"></i>
     </a>
 
     <script>
@@ -732,6 +774,10 @@
             const menuToggle = document.querySelector('.menu-toggle');
             navbar.classList.toggle('active');
             menuToggle.classList.toggle('active');
+            
+            // Update ARIA attributes
+            const isExpanded = navbar.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
         }
 
         // Close menu when clicking a link
@@ -740,6 +786,7 @@
             const menuToggle = document.querySelector('.menu-toggle');
             navbar.classList.remove('active');
             menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
         }
 
         // Smooth scrolling for navigation links
@@ -775,6 +822,22 @@
             if (!header.contains(event.target) && navbar.classList.contains('active')) {
                 navbar.classList.remove('active');
                 menuToggle.classList.remove('active');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
+        // Add keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // Skip to main content when pressing Alt+1
+            if (e.altKey && e.key === '1') {
+                e.preventDefault();
+                document.querySelector('main') ? document.querySelector('main').focus() : 
+                  document.querySelector('.hero').focus();
+            }
+            
+            // Close menu when pressing Escape
+            if (e.key === 'Escape' && document.getElementById('navbar').classList.contains('active')) {
+                closeMenu();
             }
         });
     </script>
