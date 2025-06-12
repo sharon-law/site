@@ -153,21 +153,21 @@
         .hero {
             background: linear-gradient(135deg, #e8f2f7 0%, #d4e5ed 100%);
             color: #2c3e50;
-            padding: 150px 20px 80px;
+            padding: 100px 20px 40px;
             text-align: center;
             margin-top: 60px;
         }
 
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
             color: #34495e;
             font-family: 'Playfair Display', serif;
         }
 
         .hero h2 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             font-weight: normal;
             color: #5a7c8e;
             font-family: 'Cormorant Garamond', serif;
@@ -359,29 +359,43 @@
         /* Fixed WhatsApp button */
         .whatsapp-float {
             position: fixed;
-            bottom: 20px;
-            left: 20px;
+            bottom: 25px;
+            left: 25px;
             background-color: #25D366;
             color: white;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 65px;
+            height: 65px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: all 0.3s;
+            animation: bounce 8s infinite;
         }
         
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
             background-color: #1da851;
+            animation-play-state: paused;
         }
         
         .whatsapp-float i {
-            font-size: 1.5rem;
+            font-size: 2rem;
+        }
+        
+        @keyframes bounce {
+            0%, 90%, 95%, 100% {
+                transform: translateY(0);
+            }
+            92.5% {
+                transform: translateY(-15px);
+            }
+            97.5% {
+                transform: translateY(-8px);
+            }
         }
 
         .contact .section-title {
@@ -553,27 +567,34 @@
             }
             
             .profile-text-overlay {
-                padding: 8px;
+                padding: 10px 8px;
                 background-color: rgba(28, 40, 51, 0.9); /* Darker background on small screens for better readability */
             }
             
             .profile-text-overlay h3 {
-                margin-bottom: 2px;
-                line-height: 1.1;
+                margin-bottom: 6px;
+                line-height: 1.2;
+                font-size: min(4vw, 1.6rem);
             }
             
             .profile-text-overlay p {
-                line-height: 1.1;
+                line-height: 1.2;
+                font-size: min(2.8vw, 1rem);
             }
             
             /* Extra small screens */
             @media (max-width: 480px) {
                 .profile-text-overlay {
-                    padding: 5px;
+                    padding: 8px 5px;
                 }
                 
                 .profile-text-overlay h3 {
-                    margin-bottom: 0;
+                    margin-bottom: 4px;
+                    font-size: 1.1rem;
+                }
+                
+                .profile-text-overlay p {
+                    font-size: 0.9rem;
                 }
             }
         }
@@ -604,8 +625,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <h1>עו״ד ומגשרת שרון ברוורמן עטיה</h1>
-        <h2>מומחית לדיני עבודה | ליטיגציה | ביטחון סוציאלי</h2>
-        <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #5a7c8e;">ליווי משפטי אישי, מקצועי ובלתי מתפשר, מבוסס ניסיון, שליחות והבנה מעמיקה של עולם העבודה והזכויות בישראל</p>
+        <h2>דיני עבודה | ליטיגציה | ביטוח לאומי</h2>
     </section>
 
     <!-- Profile Image Section -->
@@ -617,6 +637,11 @@
                     <h3>שרון ברוורמן עטיה ושות' | משרד עורכי דין</h3>
                     <p>SHARON BRAVERMAN ATTIA & CO | LAW OFFICE</p>
                 </div>
+            </div>
+            <div style="background: linear-gradient(135deg, #e8f2f7 0%, #d4e5ed 100%); padding: 30px 20px; margin: 0; width: 100%; max-width: 100%; box-shadow: 0 5px 15px rgba(90, 124, 142, 0.1);">
+                <p style="text-align: center; font-size: 1.2rem; color: #34495e; line-height: 1.7; font-weight: 500; margin: 0; max-width: 1200px; margin: 0 auto;">המשרד שלי מלווה עובדים, מעסיקים, גמלאים, נכים ובני משפחותיהם – <span style="color: #5a7c8e; font-weight: 600;">במקצועיות, ברגישות ובנחישות</span>. אני מאמינה בליווי משפטי אישי, מחויב ונגיש, שמוביל לתוצאות ולא משאיר את הלקוח לבד.</p>
+                <p style="text-align: center; font-size: 1.2rem; color: #34495e; font-weight: 600; margin-top: 15px; max-width: 1200px; margin: 15px auto 0;">מוזמנים ליצור קשר לפגישת ייעוץ ראשונית – ללא התחייבות.</p>
+            </div>
             </div>
         </div>
     </section>
@@ -635,6 +660,7 @@
     <!-- Services Section -->
     <section id="services" class="services">
         <h2 class="section-title">תחומי התמחות</h2>
+        <p style="text-align: center; margin-bottom: 30px; font-size: 1.2rem; color: #34495e; font-weight: 500;">זקוקים לליווי משפטי בדיני עבודה או בתביעת נכון מהעבודה? צרו קשר לתיאום פגישה אישית.</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">⚖️</div>
@@ -670,28 +696,7 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="experience">
-        <h2 class="section-title">ניסיון מקצועי</h2>
-        <ul class="experience-list">
-            <li class="experience-item">
-                <h3>התמחות בבית הדין לעבודה</h3>
-                <p>התמחות תחת כב׳ השופט סגן הנשיאה אילן סופר, היכרות עמוקה עם הפן השיפוטי של משפט העבודה</p>
-            </li>
-            <li class="experience-item">
-                <h3>משרד חכמון-אלמקייס ושות׳</h3>
-                <p>ריכוז תחום דיני העבודה במשרד מוביל במחוז הדרום, ייצוג עובדים, ועדי עובדים ומעסיקים</p>
-            </li>
-            <li class="experience-item">
-                <h3>משרד עצמאי</h3>
-                <p>ייצוג חברות מובילות מכל מגזרי המשק, מוסדות השכלה גבוהה, חברות ממשלתיות, עמותות ורשויות מקומיות</p>
-            </li>
-            <li class="experience-item">
-                <h3>מרצה ומומחית</h3>
-                <p>מרצה בהשתלמויות ובימי עיון בלשכת עורכי הדין, בכנסים של ארגוני מעסיקים ובהשתלמויות למנהלי משאבי אנוש</p>
-            </li>
-        </ul>
-    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
